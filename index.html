@@ -328,7 +328,7 @@
     } else {
       // e.g. "16:00" (deadline) â instant event
       start = new Date(event.date + "T" + event.time + ":00");
-      end = null;
+      end = start;
     }
 
     function formatDate(d) {
@@ -340,7 +340,7 @@
       `UID:${event.date}-${event.lecture.replace(/\s+/g, "")}@${event.module}\n` +
       `DTSTAMP:${formatDate(new Date())}\n` +
       `DTSTART:${formatDate(start)}\n` +
-      (end ? `DTEND:${formatDate(end)}\n` : "") +   // only add DTEND if range
+      `DTEND:${formatDate(end)}\n` +
       `SUMMARY:${event.lecture}\n` +
       `DESCRIPTION:Week ${event.week} | ${event.format} | Staff: ${event.staff}\n` +
       (event.location ? `LOCATION:${event.location}\n` : "") +
