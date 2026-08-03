@@ -341,7 +341,7 @@
       `DTSTAMP:${formatDate(new Date())}\n` +
       `DTSTART:${formatDate(start)}\n` +
       `DTEND:${formatDate(end)}\n` +
-      `SUMMARY:${event.lecture}\n` +
+      `SUMMARY:${event.module} - ${event.lecture}\n` +
       `DESCRIPTION:Week ${event.week} | ${event.format} | Staff: ${event.staff}\n` +
       (event.location ? `LOCATION:${event.location}\n` : "") +
       "END:VEVENT\n";
